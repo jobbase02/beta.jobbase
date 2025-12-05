@@ -1,6 +1,6 @@
 // app/post/page.jsx
 import React, { Suspense } from 'react';
-import PostContent from './PageRender'; // Apne component ka path yahan check kar lena
+import PostContent from './components/PostContent'; // Apne component ka path yahan check kar lena
 
 export default function Page() {
   return (

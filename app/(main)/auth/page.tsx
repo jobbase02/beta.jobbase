@@ -1,15 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react"; // 1. Import Suspense
 import AuthForm from "../components/Auth";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Loader2 } from "lucide-react"; // Import a loader icon
+
+// Optional: Create a simple loading component for the fallback
+const AuthLoading = () => (
+  <div className="w-full h-[400px] flex flex-col items-center justify-center bg-white/50 backdrop-blur-sm rounded-2xl border border-zinc-100 shadow-xl">
+    <Loader2 className="w-8 h-8 text-blue-600 animate-spin mb-2" />
+    <p className="text-zinc-500 text-sm font-medium">Loading authentication...</p>
+  </div>
+);
 
 export default function AuthPage() {
   return (
     <div className="min-h-screen relative flex items-center justify-center p-6 bg-white selection:bg-blue-100 selection:text-blue-900 overflow-hidden">
       
-      {/* Background Decor (Matching your design system) */}
+      {/* Background Decor */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 opacity-[0.4]"
@@ -32,8 +40,10 @@ export default function AuthPage() {
           <ChevronLeft size={16} /> Back to Home
         </Link>
         
-        {/* The Auth Component */}
-        <AuthForm />
+        {/* The Auth Component Wrapped in Suspense */}
+        <Suspense fallback={<AuthLoading />}>
+           <AuthForm />
+        </Suspense>
       </div>
 
     </div>

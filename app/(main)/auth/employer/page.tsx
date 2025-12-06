@@ -1,7 +1,7 @@
 "use client";
 
-import React, { Suspense } from "react"; // 1. Import Suspense
-import AuthForm from "./EmpAuthComponent";
+import { Suspense } from "react"; // 1. Import Suspense
+import EmployerAuth from "./EmpAuthComponent";
 import { ChevronLeft, Loader2 } from "lucide-react"; // Import a loader icon
 
 // Optional: Create a simple loading component for the fallback
@@ -15,7 +15,7 @@ const AuthLoading = () => (
 export default function AuthPage() {
   return (
         <Suspense fallback={<AuthLoading />}>
-           <AuthForm />
+           <EmployerAuth />
         </Suspense>
      
   );

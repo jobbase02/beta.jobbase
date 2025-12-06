@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JobBase.in",
     description: "Connect with top employers and discover opportunities.",
-    images: ["/logo.png"], 
+    images: ["/logo.png"],
   },
 };
 
@@ -61,15 +61,15 @@ export default function RootLayout({
         className={`${inter.variable} ${merriweather.variable} flex flex-col min-h-screen`}
       >
         <Suspense fallback={<div></div>}>
-        <Navbar />
-          </Suspense>
-        
+          <Navbar />
+        </Suspense>
+
         <main className="flex-grow">
           {/* ✅ Correctly wrapped Suspense Boundary */}
-            {children}
-          
+          {children}
+
         </main>
-        
+
         <Footer />
       </body>
     </html>

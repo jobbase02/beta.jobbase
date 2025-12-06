@@ -1,21 +1,12 @@
 // app/post/page.jsx
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import PostContent from './PageRender'; // Apne component ka path yahan check kar lena
 
 export default function Page() {
   return (
     // Suspense Boundary yahan lagayi hai
-    <Suspense fallback={<LoadingFallback />}>
+    <Suspense fallback={<></>}>
       <PostContent />
     </Suspense>
-  );
-}
-
-// Simple Loading UI (Jab tak data load hoga ye dikhega)
-function LoadingFallback() {
-  return (
-    <div className="min-h-screen bg-white pt-28 pb-12 px-4 flex justify-center">
-       <div className="text-slate-500 font-medium">Loading post...</div>
-    </div>
   );
 }

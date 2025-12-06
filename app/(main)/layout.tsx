@@ -60,7 +60,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${merriweather.variable} flex flex-col min-h-screen`}
       >
+        <Suspense fallback={<div></div>}>
         <Navbar />
+          </Suspense>
         
         <main className="flex-grow">
           {/* ✅ Correctly wrapped Suspense Boundary */}

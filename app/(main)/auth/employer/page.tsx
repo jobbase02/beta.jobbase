@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react"; // 1. Import Suspense
-import EmployerAuth from "./EmpAuthComponent";
+import { EmployerAuth } from "./EmpAuthComponent";
 import { ChevronLeft, Loader2 } from "lucide-react"; // Import a loader icon
 
 // Optional: Create a simple loading component for the fallback

@@ -64,9 +64,8 @@ export default function RootLayout({
         
         <main className="flex-grow">
           {/* ✅ Correctly wrapped Suspense Boundary */}
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
             {children}
-          </Suspense>
+          
         </main>
         
         <Footer />

@@ -13,10 +13,7 @@ export default function EmployerLayout({
             <Navbar />
            
                    <main className="flex-grow">
-                     {/* ✅ Correctly wrapped Suspense Boundary */}
-                     <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
                        {children}
-                     </Suspense>
                    </main>
             
         </div>
